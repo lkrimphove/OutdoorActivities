@@ -89,8 +89,32 @@ module "lambda_function" {
     CLOUDFRONT_DISTRIBUTION_ID = module.cloudfront.cloudfront_distribution_id
   }
 
+  layers = [
+    module.lambda_layer.lambda_layer_arn,
+  ]
+
   attach_policy = true
   policy        = aws_iam_policy.lambda_policy.arn
+}
+
+module "lambda_layer" {
+  source = "terraform-aws-modules/lambda/aws"
+
+  create_function = false
+  create_layer    = true
+
+  layer_name          = "outdoor-activities-layer"
+  description         = "Lambda layer containing everything for Outdoor Activities"
+  compatible_runtimes = ["python3.11"]
+  runtime             = "python3.11" 
+   
+  source_path = [
+    {
+      path             = "../src/lambda-layer"
+      pip_requirements = true
+      prefix_in_zip    = "python" # required to get the path correct
+    }
+  ]
 }
 
 resource "aws_iam_policy" "lambda_policy" {
