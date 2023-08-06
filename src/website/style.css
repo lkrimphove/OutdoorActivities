@@ -1,0 +1,106 @@
+/* common */
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: #f0f5f0;
+}
+
+a {
+    color: #00703c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* impressum.html */
+#impressum-container {
+    padding: 20px;
+}
+
+#impressum-container h1 {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+#impressum-container p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* 404.html */
+#not-found-container {
+    padding: 20px;
+    text-align: center;
+}
+
+#not-found-container h1 {
+    font-size: 32px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+#not-found-container p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Header/Footer */
+.box {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+.box .row {
+    border: 1px dotted grey;
+}
+
+.box .row.header {
+    flex: 0 1 auto;
+    background-color: #00703c;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .row.header h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.box .row.content {
+    flex: 1 1 auto;
+}
+
+.box .row.footer {
+    flex: 0 1 40px;
+    background-color: #00703c; 
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.box .row.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 24px;
+}
+
+.box .row.footer a.link-impressum {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 16px;
+}

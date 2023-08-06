@@ -1,0 +1,7 @@
+gpxpy
+folium
+pandas
+numpy
+haversine
+
+boto3
